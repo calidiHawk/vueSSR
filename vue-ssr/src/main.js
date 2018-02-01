@@ -1,6 +1,11 @@
 import Vue from 'vue'
 import App from './App.vue'
 import { createRouter } from './router/router.js'
+import VModal from 'vue-js-modal'
+
+Vue.config.productionTip = false
+
+Vue.use(VModal)
 
 // export a factory function for creating fresh app, router and store
 // instances
