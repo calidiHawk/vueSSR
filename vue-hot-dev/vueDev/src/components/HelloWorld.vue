@@ -94,6 +94,17 @@
         </a>
       </li>
     </ul>
+    <div id="container">
+      <div class="square"></div>
+      <button
+      @click="onClick">Click</button>
+    </div>
+
+    <div id="container2">
+      <div class="cat"><img src="/static/cat.png" /></div>
+      <button
+      @click="onClick2">Click</button>
+    </div>
   </div>
 </template>
 
@@ -181,6 +192,15 @@ export default {
 
     dialogEvent (eventName) {
       console.log('Dialog event: ' + eventName)
+    },
+    onClick:function(){
+      TweenMax.from('.square',1,{x:500});
+      // TweenLite.to('.square', 1, {css:{scaleX:0.5, rotation:30}, ease:Power3.easeOut});
+    },
+    onClick2:function(){
+      // TweenMax.from('.cat',1,{x:500});
+      // TweenLite.to('.cat', 2, {rotationZ:"13rad", skewZ:"1deg", z:-100});
+      TweenLite.to('.cat', 2, {rotation:"13rad", scale:1.2, x:10, y:0, z:-200, ease: Back.easeOut.config(15)});
     }
   },
 }
@@ -202,5 +222,11 @@ li {
 }
 a {
   color: #42b983;
+}
+.square{
+  background-color:red;
+  width: 100px;
+  height: 100px;
+  margin: 20px;
 }
 </style>
