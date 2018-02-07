@@ -1,21 +1,33 @@
 <template>
-  <modal name="dog-profile"
+  <div>
+      <modal name="dog-profile"
          classes="cute-dog-profile-photo"
          transition="scale"
-         :height="260"
-         :width="260"
-         @opened="opened">
-    <div slot="top-right" class="ct-top-right">
-      HIDE THE DOGGY
+         @opened="opened"
+         @before-close="beforeClose">
+      <div slot="top-right" class="ct-top-right" @closed="closed">
+        HIDE THE DOGGY
+      </div>
+      <div class="dog">
+        <img src="/static/batman.png"/>
+      </div>
+      </modal>
     </div>
-    <img src="/static/cute_dog.gif" />
-  </modal>
 </template>
 <script>
 export default {
   name: 'InputFocusModal',
   methods: {
+
     opened (event) {
+      TweenLite.to('.dog', 1, {rotation:"25rad", scale:1, x:0, y:0, ease: SlowMo.ease.config(1) });
+    },
+    beforeClose (event) {
+      // transition: ease-out
+      TweenLite.to('.dog', 1, {rotation:"25rad", scale:2, x:0, y:0, ease: SlowMo.ease.config(1), delay: 2});
+    },
+    closed (event) {
+      TweenLite.to('.dog', 1, {rotation:"15rad", scale:2, x:0, y:0, ease: SlowMo.ease.config(1), delay:4});
     }
   }
 }
@@ -23,9 +35,9 @@ export default {
 <style lang="scss">
   .cute-dog-profile-photo {
     background-color: transparent;
-    border-radius: 100%;
-    box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.4);
-    border: 1px solid rgba(255, 255, 255, 0.65);
+    // border: 1px;
+    // box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.4);
+    // border: 1px solid rgba(255, 255, 255, 0.65);
 
     img {
       width: 260px;

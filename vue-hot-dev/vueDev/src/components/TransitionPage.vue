@@ -2,102 +2,17 @@
 
   <div class="hello">
 
-    <demo-dog-profile-modal />
+    <!-- <router-link :to="'/'"> -->
+      <demo-dog-profile-modal />
+    <!-- </router-link> -->
 
-    <router-link :to="'page2'">
-      <button
-        class="page2"
-        @click="onClick">
-        To Page 2
-      </button>
-    </router-link>
-
-      <button
-        class="btn-green"
-        @click="$modal.show('dog-profile')">
-        Demo: Dog Profile photo
-      </button>
+    <button
+      class="btn green"
+      @click="$modal.show('dog-profile')">
+      Demo: Dog Profile photo
+    </button>
 
     <h1>{{ msg }}</h1>
-    <h2>Essential Links</h2>
-    <ul>
-      <li>
-        <a
-          href="https://vuejs.org"
-          target="_blank"
-        >
-          Core Docs
-        </a>
-      </li>
-      <li>
-        <a
-          href="https://forum.vuejs.org"
-          target="_blank"
-        >
-          Forum
-        </a>
-      </li>
-      <li>
-        <a
-          href="https://chat.vuejs.org"
-          target="_blank"
-        >
-          Community Chat
-        </a>
-      </li>
-      <li>
-        <a
-          href="https://twitter.com/vuejs"
-          target="_blank"
-        >
-          Twitter
-        </a>
-      </li>
-      <br>
-      <li>
-        <a
-          href="http://vuejs-templates.github.io/webpack/"
-          target="_blank"
-        >
-          Docs for This Template
-        </a>
-      </li>
-    </ul>
-    <h2>Ecosystem</h2>
-    <ul>
-      <li>
-        <a
-          href="http://router.vuejs.org/"
-          target="_blank"
-        >
-          vue-router
-        </a>
-      </li>
-      <li>
-        <a
-          href="http://vuex.vuejs.org/"
-          target="_blank"
-        >
-          vuex
-        </a>
-      </li>
-      <li>
-        <a
-          href="http://vue-loader.vuejs.org/"
-          target="_blank"
-        >
-          vue-loader
-        </a>
-      </li>
-      <li>
-        <a
-          href="https://github.com/vuejs/awesome-vue"
-          target="_blank"
-        >
-          awesome-vue
-        </a>
-      </li>
-    </ul>
   </div>
 </template>
 
@@ -111,7 +26,7 @@ export default {
   },
   data() {
     return {
-      msg: 'Welcome to Your Vue.js App',
+      msg: 'Page 2!',
       resizable: false,
       adaptive: false,
       draggable: false,
@@ -187,7 +102,13 @@ export default {
       console.log('Dialog event: ' + eventName)
     },
     onClick:function(){
-      TweenLite.to('.page2', 2, {rotation:"13rad", scale:1.2, x:10, y:0, z:-200, ease: Back.easeOut.config(15)});
+      TweenMax.from('.square',1,{x:500});
+      // TweenLite.to('.square', 1, {css:{scaleX:0.5, rotation:30}, ease:Power3.easeOut});
+    },
+    onClick2:function(){
+      // TweenMax.from('.cat',1,{x:500});
+      // TweenLite.to('.cat', 2, {rotationZ:"13rad", skewZ:"1deg", z:-100});
+      TweenLite.to('.cat', 2, {rotation:"13rad", scale:1.2, x:10, y:0, z:-200, ease: Back.easeOut.config(15)});
     }
   },
 }
