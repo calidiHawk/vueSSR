@@ -6,7 +6,7 @@
          @opened="opened"
          @before-close="beforeClose">
       <div slot="top-right" class="ct-top-right" @closed="closed">
-        HIDE THE DOGGY
+        X
       </div>
       <div class="dog">
         <img src="/static/batman.png"/>
@@ -23,7 +23,6 @@ export default {
       TweenLite.to('.dog', 1, {rotation:"25rad", scale:1, x:0, y:0, ease: SlowMo.ease.config(1) });
     },
     beforeClose (event) {
-      // transition: ease-out
       TweenLite.to('.dog', 1, {rotation:"25rad", scale:2, x:0, y:0, ease: SlowMo.ease.config(1), delay: 2});
     },
     closed (event) {
@@ -35,9 +34,6 @@ export default {
 <style lang="scss">
   .cute-dog-profile-photo {
     background-color: transparent;
-    // border: 1px;
-    // box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.4);
-    // border: 1px solid rgba(255, 255, 255, 0.65);
 
     img {
       width: 260px;

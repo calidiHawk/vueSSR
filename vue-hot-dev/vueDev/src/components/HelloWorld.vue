@@ -6,7 +6,7 @@
 
     <router-link :to="'page2'">
       <button
-        class="page2"
+        class="body"
         @click="onClick">
         To Page 2
       </button>
@@ -187,7 +187,7 @@ export default {
       console.log('Dialog event: ' + eventName)
     },
     onClick:function(){
-      TweenLite.to('.page2', 2, {rotation:"13rad", scale:1.2, x:10, y:0, z:-200, ease: Back.easeOut.config(15)});
+      TweenMax.to('.body', 2, {rotation:360, transformOrigin:"50% 50% 100px"});
     }
   },
 }
