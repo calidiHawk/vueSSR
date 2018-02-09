@@ -1,22 +1,26 @@
 <template>
+  <div>
+  <img class="batman-logo" src="/static/batman.png" v-show="display =true"/>
 
   <div class="hello">
+    <img src="../assets/logo.png">
 
     <demo-dog-profile-modal />
 
-    <router-link :to="'page2'">
+    <!-- <router-link :to="'page2'"> -->
       <button
         class="body"
         @click="onClick">
         To Page 2
       </button>
-    </router-link>
+    <!-- </router-link> -->
 
       <button
         class="btn-green"
         @click="$modal.show('dog-profile')">
         Demo: Dog Profile photo
       </button>
+
 
     <h1>{{ msg }}</h1>
     <h2>Essential Links</h2>
@@ -99,6 +103,7 @@
       </li>
     </ul>
   </div>
+</div>
 </template>
 
 <script>
@@ -115,7 +120,8 @@ export default {
       resizable: false,
       adaptive: false,
       draggable: false,
-      canBeShown: false
+      canBeShown: false,
+      display: false,
     }
   },
   created () {
@@ -187,7 +193,15 @@ export default {
       console.log('Dialog event: ' + eventName)
     },
     onClick:function(){
-      TweenMax.to('.body', 2, {rotation:360, transformOrigin:"50% 50% 100px"});
+      TweenLite.to('.hello', 5, {rotation:1080, transformOrigin:"50% 50%"});
+      this.display = true;
+      var tl = new TimelineLite();
+
+      tl.fromTo('.batman-logo', 2.5, {scale:0, transformOrigin:"50% 50% 100px", x:window.innerWidth/2, xPercent:-50, y:window.innerHeight/2, yPercent:-50}, {scale:20, transformOrigin:"50% 50% 100px"})
+        .to('.batman-logo', 2.5, {scale:0, transformOrigin:"50% 50% 100px"}, 2.5)
+        .to('.batman-logo', 0, {x:-window.innerWidth/2, xPercent:-50, y:-window.innerHeight/2, yPercent:-50}, 5)
+        .to('.hello', 0, {rotation:-1080, transformOrigin:"50% 50%"})
+        // rotationMultiplier++;
     }
   },
 }
@@ -215,5 +229,10 @@ a {
   width: 100px;
   height: 100px;
   margin: 20px;
+}
+.batman-logo{
+  z-index:100;
+  width: 50px;
+  float:left;
 }
 </style>
