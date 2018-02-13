@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <title>GSAP - Basic Example</title>
+
+    <link rel="stylesheet" href="css/style.css" media="screen" type="text/css" />
+
+</head>
+
+<body>
+
+  <div class="demo">
+    <div class="box red" id="redBox"></div>
+    <div class="box blue" id="blueBox"></div>
+  </div>
+
+
+
+<!--
+Bellow are 4 SVG Circles being drawn
+
+
+
+The first you may recognize from a few gsap examples... it's a little messy
+but basically: 
+
+<svg> 
+  <myShape>
+<svg>
+
+  <That is, we define out what svg we are going to work with (ie, size, version, padding)>
+
+    <Then we draw our svg shapes>
+
+  <remember to close things out always>
+-->
+<svg version="1.1" baseProfile="tiny" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+   x="0px" y="0px" width="570px" height="150px" viewBox="0 0 570 150" xml:space="preserve">
+
+    <circle class="circle-1" fill="none" cx="71.5" cy="77.5" r="51.5" stroke="#88CE02" stroke-width="4"/>
+
+</svg>
+
+
+<!--
+
+A simpiler break down of basically the exact same thing as above
+
+-->
+<svg x="0px" y="0px" width="570px" height="150px" viewBox="0 0 570 150" xml:space="preserve">
+  <circle class="circle-2" fill="none" cx="71.5" cy="77.5" r="51.5" stroke="#88CE02" stroke-width="4"/>
+</svg>
+
+
+<!--
+
+An even simpilier example...
+
+Note: all style info is still inlined here
+
+-->
+ <svg height="100" width="100">
+  <circle class="circle-2" cx="50" cy="50" r="40" stroke="black" stroke-width="3" fill="red" />
+</svg>
+
+
+
+<!--
+
+Very simple... I tucked all styple info into style.css, linking through class circle-3
+
+Some elements I left here, x, y, r, w, h 
+
+-->
+<svg height="100" width="100">
+  <circle class="circle-3" cx="50" cy="50" r="40"/>
+</svg>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- Local version of TweenMax and DrawSVGPlugin -->
+  <script src='TweenMax.min.js'></script>
+  <script src="DrawSVGPlugin.min.js"></script>
+
+
+  <!-- your custom js code -->
+  <script src="js/index.js"></script>
+
+</body>
+
+</html>

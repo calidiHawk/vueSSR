@@ -1,0 +1,54 @@
+/**
+
+If you do not inline the style inside the svg tags, you have to assign style ouside
+
+**/
+.circle-3 {
+  fill: none;
+  stroke: red;
+  stroke-width: 1;
+  stroke-linecap: butt;
+  stroke-dasharray: 0;
+}
+
+
+
+
+
+
+
+
+
+
+body {
+  font-family:sans-serif;
+}
+
+h1 {
+  margin: 5px 0;
+}
+h3 {
+  margin:0;
+  font-size:16px;
+}
+.demo {
+  width:600px;
+  height:120px;
+  background-color:black;
+}
+
+.box {
+  width:50px;
+  height:50px;
+  position:relative;
+  margin-bottom:2px;
+}
+
+.red {
+  background-color:red;
+}
+
+.blue {
+  background-color:blue;
+}
+

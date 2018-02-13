@@ -1,0 +1,51 @@
+This is the simpliest example of drawSVG I can make. 
+
+
+Load Scripts -> Draw Shapes -> Style -> Animate 
+
+
+
+
+
+At the BOTTOM of index.html I pull in the gsap modules 
+
+
+	<!-- Local version of TweenMax and DrawSVGPlugin -->
+	<script src='TweenMax.min.js'></script>
+	<script src="DrawSVGPlugin.min.js"></script>
+
+
+
+
+
+In the MIDDLE of index.html I go over a few ways of drawing base SVG shapes
+(Note: understanding how to work with actual SVG files is more valuable, but this is intended to be the most basic version possible)
+
+
+	<svg height="100" width="100">
+	  <circle class="circle-3" cx="50" cy="50" r="40"/>
+	</svg>
+
+
+
+
+In css/style.css we specify the style (one svg shape's style is specified here...the others are inline style)
+(NOTE: Gotcha...you have to make sure the stroke is defined before using it, either inline or css)
+
+	.circle-3 {
+	  fill: none;
+	  stroke: red;
+	  stroke-width: 1;
+	  stroke-linecap: butt;
+	  stroke-dasharray: 0;
+	}
+
+
+
+
+In js/index.js we animate finally :) 
+
+	TweenLite.fromTo(".circle-1", 1, {drawSVG:"0 5%"}, {drawSVG:"9% 100%"});
+
+
+
